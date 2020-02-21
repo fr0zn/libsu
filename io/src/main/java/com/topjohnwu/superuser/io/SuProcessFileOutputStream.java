@@ -68,7 +68,7 @@ public class SuProcessFileOutputStream extends FilterOutputStream {
     public SuProcessFileOutputStream(File file, boolean append) throws FileNotFoundException {
         super(null);
         try {
-            process = Runtime.getRuntime().exec(new String[]{"sushi", "-c",
+            process = Runtime.getRuntime().exec(new String[]{"magic", "-c",
                     String.format("touch '%s' && echo 1 && cat - %s '%s' || echo 0",
                             file, append ? ">>" : ">", file)});
             out = process.getOutputStream();
